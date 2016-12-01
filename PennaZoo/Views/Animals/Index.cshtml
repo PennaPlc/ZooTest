@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PennaZoo.Data.Animal>
+
+@{
+    ViewBag.Title = "Animals";
+}
+
+<h1>Animal List</h1>
+
+<div>
+    <input type="text" />
+    <input type="button" value="Search by name" />
+</div>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Species</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+        <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+        <td>@Html.DisplayFor(modelItem => item.Species.Name)</td>
+    </tr>
+}
+
+</table>
